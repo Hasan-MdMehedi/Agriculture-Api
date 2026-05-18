@@ -1,9 +1,10 @@
 # Agriculture DB — FastAPI Assessment
 
 A REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytical endpoints over the `agriculture_db` MySQL database.
-Addtionally add a Dashboard to view the analytics.
-Note: Kindly ensure that all validation inputs are entered with proper case sensitivity.
----
+
+Additionally, it includes a dashboard for viewing analytics.
+
+**Note:** Kindly ensure that all validation inputs are entered with proper case sensitivity.
 
 ## Project Structure
 
