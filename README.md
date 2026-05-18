@@ -1,7 +1,8 @@
 # Agriculture DB — FastAPI Assessment
 
-A production-ready REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytical endpoints over the `agriculture_db` MySQL database.
-
+A REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytical endpoints over the `agriculture_db` MySQL database.
+Addtionally add a Dashboard to view the analytics.
+Note: Kindly ensure that all validation inputs are entered with proper case sensitivity.
 ---
 
 ## Project Structure
@@ -25,8 +26,6 @@ agriculture_api/
 └── README.md
 ```
 
----
-
 ## Setup & Run
 
 ### 1. Clone & enter the project
@@ -40,7 +39,7 @@ cd agriculture_api
 
 ```bash
 cp .env.example .env
-# Edit .env with the DB credentials you were provided
+# Edit .env with the DB credentials that are provided
 ```
 
 `.env` contents:
@@ -56,7 +55,7 @@ DB_NAME=agriculture_db
 
 ```bash
 python -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
+source venv/bin/activate        
 pip install -r requirements.txt
 python run.py
 ```
@@ -68,7 +67,7 @@ Interactive docs at **http://localhost:8000/docs**
 
 ```bash
 docker build -t agriculture-api .
-docker run --env-file .env -p 8000:8000 agriculture-api
+docker run --env-file .env -p 5000:8000 agriculture-api
 ```
 
 ### 3c. Run with Docker Compose
@@ -122,36 +121,6 @@ All filter parameters with accepted values:
 | `limit` | Any positive integer (default: 10) |
 
 Passing an invalid value returns **HTTP 422** with a clear error message listing accepted values.
-
----
-
-## Example Requests
-
-```bash
-# All farms in Dhaka for 2023
-curl "http://localhost:8000/farms/summary?region=Dhaka&year=2023"
-
-# Farm #1 performance — Cereal crops only
-curl "http://localhost:8000/farms/1/performance?crop_category=Cereal"
-
-# Top 5 farms in Rajshahi by revenue
-curl "http://localhost:8000/farms/top?metric=revenue&region=Rajshahi&limit=5"
-
-# Loss analysis for Kharif season, grade C
-curl "http://localhost:8000/farms/loss-analysis?season=Summer&quality_grade=C"
-
-# Cereal yield efficiency in 2023
-curl "http://localhost:8000/crops/yield-efficiency?crop_category=Cereal&year=2023"
-
-# Vegetable seasonal trend Q1 2023
-curl "http://localhost:8000/crops/seasonal-trend?crop_category=Vegetable&year=2023&quarter=1"
-
-# Export market prices for Cereals
-curl "http://localhost:8000/markets/price-comparison?market_type=Export&crop_category=Cereal"
-
-# Quality breakdown for Fruits in Rajshahi 2023
-curl "http://localhost:8000/crops/quality-breakdown?crop_category=Fruit&region=Rajshahi&year=2023"
-```
 
 ---
 
