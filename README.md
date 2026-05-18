@@ -45,11 +45,11 @@ cp .env.example .env
 
 `.env` contents:
 ```
-DB_HOST=<host>
-DB_PORT=3306
-DB_USER=<username>
-DB_PASSWORD=<password>
-DB_NAME=agriculture_db
+HOST=<host>
+PORT=3306
+USER=<username>
+PASSWORD=<password>
+DB=agriculture_db
 ```
 
 ### 3a. Run locally (without Docker)
