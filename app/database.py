@@ -3,12 +3,12 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)  # Load environment variables from .env file, override existing ones
 
-HOST = os.getenv("HOST", "localhost")
-PORT = os.getenv("PORT", "3306")
-USER = os.getenv("USER", "root")
-PASSWORD = os.getenv("PASSWORD", "")
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
+USER = os.getenv("USER")
+PASSWORD = os.getenv("PASSWORD")
 DB = os.getenv("DB", "agriculture_db")
 
 DATABASE_URL = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
