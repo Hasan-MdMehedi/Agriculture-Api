@@ -2,10 +2,10 @@
 
 A REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytical endpoints over the `agriculture_db` MySQL database.
 
-Additionally, it includes a dashboard for viewing analytics.
+Additionally, Includes a dashboard for viewing analytics.
 
 **Note:** Kindly ensure that all validation inputs are entered with proper case sensitivity.
-
+**Note:** Kindlly create a .env and give the necessary credential and run this.
 ## Project Structure
 
 ```
@@ -63,6 +63,7 @@ python run.py
 
 API is now live at **http://localhost:8000**  
 Interactive docs at **http://localhost:8000/docs**
+Interactive Dashboard at **http://localhost:8000/ui**
 
 ### 3b. Run with Docker
 
