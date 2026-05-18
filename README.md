@@ -32,7 +32,7 @@ agriculture_api/
 ### 1. Clone & enter the project
 
 ```bash
-git clone <your-repo-url>
+git clone <repo-url>
 cd agriculture_api
 ```
 
