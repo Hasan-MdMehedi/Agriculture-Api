@@ -30,22 +30,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Static files ────────────────────────────────────────────────────────────
+# Static files
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
-# ── Routers ────────────────────────────────────────────────────────────────
+# Routers
 app.include_router(farms.router)
 app.include_router(crops_markets.router)
 
 
-# ── UI Dashboard ───────────────────────────────────────────────────────────
+# UI Dashboard 
 @app.get("/ui", include_in_schema=False)
 def dashboard():
-    return FileResponse(os.path.join(STATIC_DIR, "index.html"))  # ✅ absolute path
+    return FileResponse(os.path.join(STATIC_DIR, "index.html")) 
 
 
-# ── Health / root ──────────────────────────────────────────────────────────
+# Health / root
 @app.get("/", tags=["Health"])
 def root():
     db_ok = test_connection()
@@ -67,7 +67,7 @@ def debug_columns():
     return {"columns": list(df.columns), "sample": df.to_dict(orient="records")}
 
 
-# ── Global error handler ───────────────────────────────────────────────────
+# Global error handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
     return JSONResponse(

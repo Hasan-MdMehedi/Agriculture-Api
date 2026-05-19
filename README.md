@@ -61,7 +61,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-API is now live at **http://localhost:8000**  
+API is live at **http://localhost:8000**  
 Interactive docs at **http://localhost:8000/docs**
 Interactive Dashboard at **http://localhost:8000/ui**
 
@@ -123,19 +123,6 @@ All filter parameters with accepted values:
 | `limit` | Any positive integer (default: 10) |
 
 Passing an invalid value returns **HTTP 422** with a clear error message listing accepted values.
-
----
-
-## Evaluation Areas
-
-| Area | Weight |
-|------|--------|
-| Database Connection (SQLAlchemy, env-based credentials) | 15% |
-| pandas Processing (aggregations, filtering) | 30% |
-| FastAPI Endpoints (all 8 working, correct JSON shape) | 30% |
-| Code Quality (readable, no duplicate logic) | 15% |
-| Error Handling (HTTP 422 for invalid filters) | 10% |
-| Docker (bonus) | +10% |
 
 ---
 

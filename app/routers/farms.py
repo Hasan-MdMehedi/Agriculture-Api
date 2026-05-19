@@ -33,9 +33,9 @@ def _only_active(filters: dict) -> dict:
     return {k: v for k, v in filters.items() if v is not None}
 
 
-# ────────────────────────────────────────────────────────────────────────────
+
 # Endpoint 1 — Farm Summary
-# GET /farms/summary
+
 @router.get("/summary", summary="Endpoint 1: Farm Summary — revenue, profit, cost, loss per farm")
 def farm_summary(
     region: Optional[str] = Query(None, description=f"Accepted: {sorted(VALID_REGIONS)}"),
@@ -91,9 +91,8 @@ def farm_summary(
     }
 
 
-# ────────────────────────────────────────────────────────────────────────────
 # Endpoint 2 — Single Farm Performance
-# GET /farms/{farm_name}/performance
+
 @router.get("/{farm_name}/performance", summary="Endpoint 2: Single Farm — crop/year/market breakdown")
 def single_farm_performance(
     farm_name: str,
@@ -146,7 +145,7 @@ def single_farm_performance(
     }
 
 
-# ────────────────────────────────────────────────────────────────────────────
+
 # Endpoint 3 — Top Farms Ranking
 @router.get("/top", summary="Endpoint 3: Top N farms ranked by profit / revenue / yield")
 def top_farms(
@@ -217,7 +216,7 @@ def top_farms(
     }
 
 # Endpoint 4 — Loss Analysis
-# GET /farms/loss-analysis
+
 @router.get("/loss-analysis", summary="Endpoint 4: Post-harvest loss data by region, season, crop, quality")
 def loss_analysis(
     region: Optional[str] = Query(None, description=f"Accepted: {sorted(VALID_REGIONS)}"),

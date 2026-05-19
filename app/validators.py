@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 
-# ── Accepted values per filter ──────────────────────────────────────────────
+#Accepted values per filter
 VALID_REGIONS = {
     "Dhaka", "Chittagong", "Sylhet", "Rajshahi",
     "Khulna", "Rangpur", "Barisal", "Mymensingh",
@@ -36,7 +36,7 @@ VALID_QUARTERS = {1, 2, 3, 4}
 VALID_METRICS = {"profit", "revenue", "yield"}
 
 
-# ── Helper: raise 422 if value not in allowed set ────────────────────────────
+#Helper: raise 422 if value not in allowed set
 def validate(value, allowed: set, field_name: str):
     """Raise HTTP 422 if value is not in the allowed set."""
     if value is not None and value not in allowed:
