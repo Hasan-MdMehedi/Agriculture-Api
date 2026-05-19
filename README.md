@@ -4,8 +4,8 @@ A REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytica
 
 Additionally, Includes a dashboard for viewing analytics.
 
-**Note:** Kindly ensure that all validation inputs are entered with proper case sensitivity.
-**Note:** Kindlly create a .env and give the necessary credential and run this.
+**Note:** Kindly ensure that all validation inputs are entered with proper Case Sensitivity(Maintain Uppercase and lowercase syntex).
+**Note:** Kindlly create a .env and give the necessary credential and run the project as the procedure is given below.
 ## Project Structure
 
 ```
@@ -38,10 +38,7 @@ cd agriculture_api
 
 ### 2. Configure environment variables
 
-```bash
-cp .env.example .env
-# Edit .env with the DB credentials that are provided
-```
+
 
 `.env` contents:
 ```
@@ -64,6 +61,9 @@ python run.py
 API is live at **http://localhost:8000**  
 Interactive docs at **http://localhost:8000/docs**
 Interactive Dashboard at **http://localhost:8000/ui**
+
+To view the API response data in JSON format, please click the **“Try it out”** button located in the top-right corner of the endpoint section inter the required  Input Data.
+
 
 ### 3b. Run with Docker
 
