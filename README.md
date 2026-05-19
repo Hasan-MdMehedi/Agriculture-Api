@@ -5,6 +5,7 @@ A REST API built with **FastAPI + pandas + SQLAlchemy** that exposes 8 analytica
 Additionally, Includes a dashboard for viewing analytics.
 
 **Note:** Kindly ensure that all validation inputs are entered with proper Case Sensitivity(Maintain Uppercase and lowercase syntex).
+"---\n\n"
 **Note:** Kindlly create a .env and give the necessary credential and run the project as the procedure is given below.
 ## Project Structure
 

@@ -12,7 +12,7 @@ app = FastAPI(
     title="Agriculture DB API",
     description=(
         "Agricultural data analytics API for Bangladesh.\n\n"
-        "**Built with:** FastAPI · pandas · SQLAlchemy · MySQL\n\n"
+        
         "---\n\n"
         "** Additional: To See the Dashboard, Please Visit:** [/ Dashboard_UI](/ui)\n\n"
         "**Report 1 — Farm Performance:** `farms_summary` · `farms_performance` · `farms_top` · `farms_loss_analysis`\n\n"

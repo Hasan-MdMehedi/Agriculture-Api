@@ -154,7 +154,7 @@ def seasonal_revenue_trend(
 
 # Endpoint 7 — Market Price Comparison
 
-@router.get("/markets/price-comparison", summary=" Endpoint 7: Average prices by market type, district, and price tier")
+@router.get("/markets/price-comparison", summary=" Endpoint 7: Average prices by market type, district and price tier")
 def market_price_comparison(
     market_type: Optional[str] = Query(None, description=f"Filter by market type. Accepted: {sorted(VALID_MARKET_TYPES)}"),
     crop_category: Optional[str] = Query(None, description=f"Filter by crop category. Accepted: {sorted(VALID_CROP_CATEGORIES)}"),
